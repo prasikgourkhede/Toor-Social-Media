@@ -1,14 +1,17 @@
 import express from "express";
 import cookieParser from "cookie-parser"
 import authRouter from "./routes/auth.routes.js"
-
+import ticketRouter from "./routes/ticket.routes.js"
 
 
 const app = express()
 app.use(express.json());
 app.use(cookieParser());
 
-app.use("/auth", authRouter)
-
+app.use("/auth", 
+    authRouter)
+app.use("/create",
+    ticketRouter
+)
 
 export default app
